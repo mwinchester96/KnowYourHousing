@@ -3,6 +3,13 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :fb_uid, uniqueness: true
 
+  # Public: Take the hash omniauth-facebook gives us, and return a user (new or
+  # otherwise). For more about how this hash is formatted, see the example in
+  # user_test.rb.
+  #
+  # hash - the Hash being passed in from a successful OmniAuth attempt
+  #
+  # Returns the user, or false in case of failure
   def self.find_or_create_from_auth_hash(hash)
     user = User.find_or_initialize_by(fb_uid: hash[:uid])
     return user if user.persisted?
