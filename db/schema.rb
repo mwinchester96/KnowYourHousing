@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141029181604) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reviews", force: true do |t|
     t.string   "title"
     t.text     "text"
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 20141029181604) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "reviews", ["scotch_id"], name: "index_reviews_on_scotch_id"
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "reviews", ["scotch_id"], name: "index_reviews_on_scotch_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "nick"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20141029181604) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["fb_uid"], name: "index_users_on_fb_uid"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["fb_uid"], name: "index_users_on_fb_uid", using: :btree
 
 end
