@@ -1,0 +1,14 @@
+* Users
+  * Users can log in
+  * Users can sign up
+  * Users have a profile page
+  * Users have roles
+* Scotches
+  * Scotches can be CUD by an administrator
+  * Scotches can be viewed by all
+* Reviews
+  * Reviews can be CRUD by users (UD only by user)
+* API
+  * Read-only via JSON
+  * Authorization with keys
+  * CRUD via JSON
