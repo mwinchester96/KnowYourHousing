@@ -14,5 +14,9 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic,700);
 @import "bootstrap-sprockets";
+
+$font-family-serif: 'Cardo', 'Georgia', serif;
+$headings-font-family: 'Cardo', 'Georgia', serif;
 @import "bootstrap";

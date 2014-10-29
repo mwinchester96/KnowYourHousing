@@ -1,0 +1,17 @@
+$break-sm: 767px
+$break-md: 992px
+$break-lg: 1200px
+
+=respond-to($media)
+  @if $media == phones
+    @media only screen and (max-width: $break-sm)
+      @content
+  @else if $media == tablets
+    @media only screen and (min-width: $break-sm + 1) and (max-width: $break-md - 1)
+      @content
+  @else if $media == desktops
+    @media only screen and (min-width: $break-md) and (max-width: $break-lg - 1)
+      @content
+  @else if $media == big-desktops
+    @media only screen and (min-width: $break-lg)
+      @content
