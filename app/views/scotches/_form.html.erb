@@ -1,0 +1,41 @@
+<%= form_for(@scotch) do |f| %>
+  <% if @scotch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scotch.errors.count, "error") %> prohibited this scotch from being saved:</h2>
+
+      <ul>
+      <% @scotch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :distiller %><br>
+    <%= f.text_field :distiller %>
+  </div>
+  <div class="field">
+    <%= f.label :affiliate_price %><br>
+    <%= f.text_field :affiliate_price %>
+  </div>
+  <div class="field">
+    <%= f.label :affiliate_name %><br>
+    <%= f.text_field :affiliate_name %>
+  </div>
+  <div class="field">
+    <%= f.label :affiliate_url %><br>
+    <%= f.text_field :affiliate_url %>
+  </div>
+  <div class="field">
+    <%= f.label :story %><br>
+    <%= f.text_area :story %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

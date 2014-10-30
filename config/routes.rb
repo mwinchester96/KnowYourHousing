@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :scotches
+
   resources :reviews
   resources :users
 

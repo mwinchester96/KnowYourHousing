@@ -11,23 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029181604) do
+ActiveRecord::Schema.define(version: 20141030201631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "reviews", force: true do |t|
-    t.string   "title"
-    t.text     "text"
-    t.integer  "user_id"
-    t.integer  "scotch_id"
     t.integer  "score"
+    t.boolean  "had_it"
+    t.boolean  "want_it"
+    t.boolean  "favorite"
+    t.integer  "scotch_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "reviews", ["scotch_id"], name: "index_reviews_on_scotch_id", using: :btree
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  create_table "scotches", force: true do |t|
+    t.string   "name"
+    t.string   "distiller"
+    t.string   "affiliate_price"
+    t.string   "affiliate_name"
+    t.string   "affiliate_url"
+    t.text     "story"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "nick"

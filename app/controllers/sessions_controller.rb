@@ -2,12 +2,13 @@ class SessionsController < ApplicationController
 
   def new #homepage
     # if logged in, redirect to scotches index
+    render :new, layout: 'home'
   end
 
   def facebook_create
     @user = User.find_or_create_from_auth_hash(auth_hash)
-    current_user = @user
-    redirect_to root_url
+    session[:user_id] = @user.id
+    redirect_to scotches_path
   end
 
   protected

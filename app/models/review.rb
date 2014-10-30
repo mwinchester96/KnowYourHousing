@@ -1,4 +1,4 @@
 class Review < ActiveRecord::Base
-  belongs_to :user
   belongs_to :scotch
+  belongs_to :user
 end

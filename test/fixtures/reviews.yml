@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  text: MyText
-  user_id: 
-  scotch_id: 
   score: 1
+  had_it: false
+  want_it: false
+  favorite: false
 
 two:
-  title: MyString
-  text: MyText
-  user_id: 
-  scotch_id: 
   score: 1
+  had_it: false
+  want_it: false
+  favorite: false
