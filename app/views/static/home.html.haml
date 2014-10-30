@@ -13,12 +13,12 @@
             %tr.max-size
               %td.max-size
                 %h1{style: 'line-height: .9'}
-                  Discover & Share
-                  %br
-                  %i{style: 'font-size: 60%; position: relative; top: -5px'} your
-                  %br
-                  Favorite Scotches
-                %a.fb_login{href: facebook_login_url}
+                  %div Discover & Share
+                  %div
+                    %i{style: 'font-size: 60%; position: relative; top: -5px'} your
+                  %div
+                    Favorite Scotches
+                %a.fb_login{href: '/auth/facebook'}
                   =image_tag 'facebook-icon.png', style: 'width: 20px'
                   Log In With Facebook
 #scottish-coast-bg-phones.visible-xs
@@ -36,7 +36,7 @@
                   %i{style: 'font-size: 60%; position: relative; top: -5px'} your
                   %br
                   Favorite Scotches
-                %a.fb_login{href: facebook_login_url}
+                %a.fb_login{href: '/auth/facebook'}
                   =image_tag 'facebook-icon.png', style: 'width: 20px'
                   Log In With Facebook
 

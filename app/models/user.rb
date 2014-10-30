@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
     user.email        = hash[:info][:email]
     user.fb_image_url = hash[:info][:image]
     user.fb_location  = hash[:info][:location]
-    user.oauth_token  = auth.credentials.token
-    user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+    user.oauth_token  = hash[:credentials][:token]
+    user.oauth_expires_at = Time.at(hash[:credentials][:expires_at])
 
     user.save!
   end

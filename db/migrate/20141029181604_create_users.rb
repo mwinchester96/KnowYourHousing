@@ -7,7 +7,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :fb_image_url
       t.string :fb_location
-      t.integer :fb_uid
+      t.string :oauth_token
+      t.datetime :oauth_expires_at
+      t.string :fb_uid
 
       t.index :fb_uid
       t.index :email

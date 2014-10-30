@@ -36,9 +36,11 @@ ActiveRecord::Schema.define(version: 20141029181604) do
     t.string   "last_name"
     t.string   "fb_image_url"
     t.string   "fb_location"
-    t.integer  "fb_uid"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "fb_uid"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
