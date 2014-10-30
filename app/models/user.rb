@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     user.oauth_token  = hash[:credentials][:token]
     user.oauth_expires_at = Time.at(hash[:credentials][:expires_at])
 
-    user.save!
+    user.save! && user
   end
 
 end
