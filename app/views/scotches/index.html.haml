@@ -3,14 +3,12 @@
   %h1 Trending Scotches
   - @scotches.each do |scotch|
     .row
-      %td= scotch.name
-      %td= scotch.distiller
-      %td= scotch.affiliate_price
-      %td= scotch.affiliate_name
-      %td= scotch.affiliate_url
-      %td= scotch.story
-      %td= link_to 'Show', scotch
-      %td= link_to 'Edit', edit_scotch_path(scotch)
-      %td= link_to 'Destroy', scotch, method: :delete, data: { confirm: 'Are you sure?' }
+      .col-md-2
+      .col-md-10
+        %h2= scotch.name
+        = link_to 'Show', scotch
+        -if current_user.admin?
+          %td= link_to 'Edit', edit_scotch_path(scotch)
+          %td= link_to 'Destroy', scotch, method: :delete, data: { confirm: 'Are you sure?' }
   -if current_user.admin?
     %div= link_to 'New Scotch', new_scotch_path
