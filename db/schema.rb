@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 20141031184903) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "fb_uid"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "role"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "role",             default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

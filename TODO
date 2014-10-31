@@ -1,8 +1,3 @@
-* Users
-  * Users can log in
-  * Users can sign up
-  * Users have a profile page
-  * Users have roles
 * Scotches
   * Scotches can be CUD by an administrator
   * Scotches can be viewed by all
