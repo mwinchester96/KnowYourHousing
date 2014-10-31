@@ -1,6 +1,5 @@
 * Users
   * Users can log in
-    * Auth failure route should work
   * Users can sign up
   * Users have a profile page
   * Users have roles

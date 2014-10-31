@@ -19,11 +19,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Scot
+          %a.navbar-brand{:href => scotches_path} Scot
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li.active
+            %li
               %a{:href => scotches_path} Scotches
             %li
               %a{:href => new_review_path} + New Review
@@ -40,5 +40,14 @@
                   %a{:href => user_path(current_user)} View Profile
                 %li
                   =link_to 'Log out', session_path(current_user), :method => 'delete'
+    -if flash.any?
+      %div{:style => 'margin-top: -20px'}
+        -flash.each do |k,v|
+          %div{:class => translate_flash_key_to_bootstrap_class(k)}
+            .container.text-center
+              =v
+              %button.close{"data-dismiss" => "alert", :type => "button"}
+                %span{"aria-hidden" => "true"} ×
+                %span.sr-only Close
 
     = yield

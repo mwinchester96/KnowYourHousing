@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :ensure_logged_in, only: [:new, :facebook_create]
 
   def new #homepage
     # if logged in, redirect to scotches index

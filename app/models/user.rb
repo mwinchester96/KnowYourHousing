@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  enum role: [ :admin, :user ]
+
   validates :email, uniqueness: true
   validates :fb_uid, uniqueness: true
 
@@ -22,6 +24,7 @@ class User < ActiveRecord::Base
     user.fb_location  = hash[:info][:location]
     user.oauth_token  = hash[:credentials][:token]
     user.oauth_expires_at = Time.at(hash[:credentials][:expires_at])
+    user.role = 'user'
 
     user.save! && user
   end

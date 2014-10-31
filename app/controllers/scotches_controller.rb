@@ -1,6 +1,6 @@
 class ScotchesController < ApplicationController
   before_action :set_scotch, only: [:show, :edit, :update, :destroy]
-
+  before_action :ensure_admin, only: [:new, :edit, :create, :update, :destroy]
   # GET /scotches
   # GET /scotches.json
   def index

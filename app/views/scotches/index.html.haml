@@ -12,5 +12,5 @@
       %td= link_to 'Show', scotch
       %td= link_to 'Edit', edit_scotch_path(scotch)
       %td= link_to 'Destroy', scotch, method: :delete, data: { confirm: 'Are you sure?' }
-  %br
-    = link_to 'New Scotch', new_scotch_path
+  -if current_user.admin?
+    %div= link_to 'New Scotch', new_scotch_path

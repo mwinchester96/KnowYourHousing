@@ -1,13 +1,13 @@
 #scottish-coast-bg.hidden-xs
   .container.max-size
     .row.text-center.max-size
-      .col-md-6.col-sm-6.max-size
+      .col-md-6.col-sm-6.col-xs-12.max-size
         %table.max-size
           %tbody.max-size
             %tr.max-size
               %td.max-size
                 =image_tag 'logos/scotty_huge_white.png', style: 'width: 100%'
-      .col-md-6.col-sm-6.max-size
+      .col-md-6.col-sm-6.col-xs-12.max-size
         %table.max-size
           %tbody.max-size
             %tr.max-size
@@ -21,24 +21,11 @@
                 %a.fb_login{href: '/auth/facebook'}
                   =image_tag 'facebook-icon.png', style: 'width: 20px'
                   Log In With Facebook
-#scottish-coast-bg-phones.visible-xs
-  .container.max-size
-    .row.text-center.max-size
-      .col-xs-12.max-size
-        %table.max-size
-          %tbody.max-size
-            %tr.max-size
-              %td.max-size
-                =image_tag 'logos/scotty_huge_white.png', style: 'width: 100%'
-                %h1{style: 'line-height: .9'}
-                  Discover & Share
-                  %br
-                  %i{style: 'font-size: 60%; position: relative; top: -5px'} your
-                  %br
-                  Favorite Scotches
-                %a.fb_login{href: '/auth/facebook'}
-                  =image_tag 'facebook-icon.png', style: 'width: 20px'
-                  Log In With Facebook
+                -if flash.any?
+                  -flash.each do |k,v|
+                    %div{:class => translate_flash_key_to_bootstrap_class(k), style: 'padding: 15px; width: 300px; margin: 10px auto'}
+                      =v
+
 
 
 
