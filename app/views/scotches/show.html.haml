@@ -1,6 +1,7 @@
 .container
   .row
     .col-md-4
+      = image_tag @scotch.image.url, :style => 'width: 360px'
     .col-md-8
       %h1
         = @scotch.name
@@ -9,7 +10,7 @@
         = @scotch.distiller
       %p
         Available for $#{@scotch.affiliate_price}
-        %i(with shipping)
+        %i (with shipping)
         at
         =link_to @scotch.affiliate_name, @scotch.affiliate_url
       %p

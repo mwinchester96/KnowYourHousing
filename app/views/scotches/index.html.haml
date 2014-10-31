@@ -3,8 +3,8 @@
   %h1 Trending Scotches
   - @scotches.each do |scotch|
     .row
-      .col-md-2
-        = image_tag scotch.image.url
+      .col-md-2.text-center
+        = image_tag scotch.image.url, :style => 'height: 200px'
       .col-md-10
         %h2= scotch.name
         = link_to 'Show', scotch
@@ -12,4 +12,5 @@
           %td= link_to 'Edit', edit_scotch_path(scotch)
           %td= link_to 'Destroy', scotch, method: :delete, data: { confirm: 'Are you sure?' }
   -if current_user.admin?
-    %div= link_to 'New Scotch', new_scotch_path
+    .row{:style => 'margin-top: 15px'}
+      .col-md-12= link_to 'New Scotch', new_scotch_path

@@ -1,4 +1,6 @@
 class Scotch < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", :storage => :s3
+  has_attached_file :image, :styles => { :medium => "300x300", :thumb => "100x100>" },
+    :default_url => "/images/:style/missing.jpg", :storage => :s3,
+    :s3_credentials => 'config/s3_config.yml'
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
