@@ -4,6 +4,7 @@
   - @scotches.each do |scotch|
     .row
       .col-md-2
+        = image_tag scotch.image.url
       .col-md-10
         %h2= scotch.name
         = link_to 'Show', scotch
