@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'quiet_assets'
   gem 'web-console', '~> 2.0.0.beta4'
   # gem 'spring'
 end
