@@ -1,0 +1,20 @@
+.container
+  %p#notice= notice
+  %p
+    %strong Scotch:
+    = @review.scotch.name
+  %p
+    %strong Score:
+    = @review.score
+  %p
+    %strong Had it:
+    = @review.had_it
+  %p
+    %strong Want it:
+    = @review.want_it
+  %p
+    %strong Favorite:
+    = @review.favorite
+  = link_to 'Edit', edit_review_path(@review)
+  |
+  \#{link_to 'Back', reviews_path}

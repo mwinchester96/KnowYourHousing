@@ -7,23 +7,26 @@
       %ul
         - @review.errors.full_messages.each do |message|
           %li= message
-  .field
-
-  .field
-    = f.label :score
+  .form-group
+    %b Scotch
+    =f.collection_select(:scotch_id, Scotch.all, :id, :name, prompt: true)
+  .form-group
+    %b Score
     %br
-      = f.number_field :score
-  .field
-    = f.label :had_it
-    %br
+    -(1..5).each do |i|
+      = f.label :score, :class => 'radio-inline' do
+        = f.radio_button :score, i
+        =i
+  .form-group
+    = f.label :had_it, style: 'margin-right: 10px' do
       = f.check_box :had_it
-  .field
-    = f.label :want_it
-    %br
+      Had it
+    = f.label :want_it, style: 'margin-right: 10px' do
       = f.check_box :want_it
-  .field
-    = f.label :favorite
-    %br
+      Want it
+    = f.label :favorite, style: 'margin-right: 10px' do
       = f.check_box :favorite
-  .actions
+      Favorite
+  =f.hidden_field :user_id, :value => current_user.id
+  .form-group
     = f.submit 'Save', :class => 'btn btn-primary'
