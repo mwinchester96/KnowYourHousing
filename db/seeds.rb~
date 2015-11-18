@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+scotches = Scotch.create({name: 'Jim Beam Dark Honey',distiller:'JB Distilleries',affiliate_price:'$22.50',affiliate_name:'Johns Scotches',affiliate_url:'Johnsscoteches.com'})
+
 
 
 

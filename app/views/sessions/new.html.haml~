@@ -5,6 +5,8 @@
         %table.max-size
           %tbody.max-size
             %tr.max-size
+              %td.max-size
+                =image_tag 'logos/realtorLogo.gif', style: 'width: 100%'
       .col-md-6.col-sm-6.max-size
         %table.max-size
           %tbody.max-size

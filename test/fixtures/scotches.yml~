@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  distiller: MyString
+  affiliate_price: MyString
+  affiliate_name: MyString
+  affiliate_url: MyString
+  story: MyText
+
+two:
+  name: MyString
+  distiller: MyString
+  affiliate_price: MyString
+  affiliate_name: MyString
+  affiliate_url: MyString
+  story: MyText

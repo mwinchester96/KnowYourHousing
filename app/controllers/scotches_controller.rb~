@@ -69,6 +69,6 @@ class ScotchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scotch_params
-      params.require(:scotch).permit(:name, :location, :college, :website_url, :description)
+      params.require(:scotch).permit(:name, :distiller, :affiliate_price, :affiliate_name, :affiliate_url, :story, :image)
     end
 end

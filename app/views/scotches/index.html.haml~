@@ -5,7 +5,7 @@
     .row
       .col-md-10
         %h2= scotch.name 
-        %h4= scotch.location 
+        %h4= scotch.distiller 
         %h4
           #{scotch.reviews.average(:score)}/5.0
           rated

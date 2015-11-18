@@ -2,16 +2,15 @@
 
 one:
   name: MyString
-  distiller: MyString
-  affiliate_price: MyString
-  affiliate_name: MyString
-  affiliate_url: MyString
-  story: MyText
+  location: MyString
+  college: MyString
+  website_url: MyString
+  description: MyString
 
 two:
   name: MyString
-  distiller: MyString
-  affiliate_price: MyString
-  affiliate_name: MyString
-  affiliate_url: MyString
-  story: MyText
+  location: MyString
+  college: MyString
+  website_url: MyString
+  description: MyString
+

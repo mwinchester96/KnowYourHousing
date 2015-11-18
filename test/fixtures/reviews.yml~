@@ -5,11 +5,9 @@ one:
   had_it: false
   want_it: false
   favorite: false
-  comments: MyString
 
 two:
   score: 1
   had_it: false
   want_it: false
   favorite: false
-  comments: MyString

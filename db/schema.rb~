@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20141031201237) do
     t.boolean  "had_it",     limit: 1
     t.boolean  "want_it",    limit: 1
     t.boolean  "favorite",   limit: 1
-    t.string   "comments",   limit: 1500
     t.integer  "scotch_id",  limit: 4
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",           null: false
@@ -27,13 +26,17 @@ ActiveRecord::Schema.define(version: 20141031201237) do
 
   create_table "scotches", force: true do |t|
     t.string   "name",               limit: 255
-    t.string   "location",          limit: 255
-    t.string   "college",    limit: 255
-    t.string   "website_url",     limit: 255
-    t.text     "description",              limit: 65535
+    t.string   "distiller",          limit: 255
+    t.string   "affiliate_price",    limit: 255
+    t.string   "affiliate_name",     limit: 255
+    t.string   "affiliate_url",      limit: 255
+    t.text     "story",              limit: 65535
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -28,8 +28,9 @@
       = f.check_box :favorite
       Favorite
   .form-group
-    %b Comments
-    =f.text_field :comments
+    = f.label :comments, style: 'margin-right: 10px' do
+      = f.text_field :comments
+      Comments
 
   =f.hidden_field :user_id, :value => current_user.id
   .form-group

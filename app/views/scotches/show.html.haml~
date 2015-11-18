@@ -15,7 +15,7 @@
       %p
         %strong Reviews:
         = @reviews.each do |review| 
-          = reviews.comments
+          = review.comments
       -if current_user.admin?
         = link_to 'Edit', edit_scotch_path(@scotch)
 
