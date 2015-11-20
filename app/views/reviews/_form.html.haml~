@@ -8,8 +8,9 @@
         - @review.errors.full_messages.each do |message|
           %li= message
   .form-group
-    %b Scotch
-    =f.collection_select(:scotch_id, Scotch.all, :id, :name, prompt: true)
+    %b Realtor
+    =f.collection_select(:realtor_id, Realtor.all, :id, :name, prompt: true)
+
   .form-group
     %b Score
     %br
@@ -17,20 +18,34 @@
       = f.label :score, :class => 'radio-inline' do
         = f.radio_button :score, i
         =i
+
   .form-group
-    = f.label :had_it, style: 'margin-right: 10px' do
-      = f.check_box :had_it
-      Had it
-    = f.label :want_it, style: 'margin-right: 10px' do
-      = f.check_box :want_it
-      Want it
-    = f.label :favorite, style: 'margin-right: 10px' do
-      = f.check_box :favorite
-      Favorite
+    %b Affordability
+    %br
+    -(1..5).each do |i|
+      = f.label :affordability, :class => 'radio-inline' do
+        = f.radio_button :affordability, i
+        =i
+
   .form-group
-    = f.label :comments, style: 'margin-right: 10px' do
-      = f.text_field :comments
-      Comments
+    %b Helpfulness
+    %br
+    -(1..5).each do |i|
+      = f.label :helpfulness, :class => 'radio-inline' do
+        = f.radio_button :helpfulness, i
+        =i
+
+  .form-group
+    %b Accomodations
+    %br
+    -(1..5).each do |i|
+      = f.label :accomodations, :class => 'radio-inline' do
+        = f.radio_button :accomodation, i
+        =i
+
+  .form-group
+    %b Comments
+    =f.text_field :comments, :value => "No comments"
 
   =f.hidden_field :user_id, :value => current_user.id
   .form-group

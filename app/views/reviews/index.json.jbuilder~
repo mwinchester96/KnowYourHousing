@@ -1,4 +1,4 @@
 json.array!(@reviews) do |review|
-  json.extract! review, :id, :score, :had_it, :want_it, :favorite, :comments
+  json.extract! review, :id, :score, :affordability, :helpfulness, :accomodation, :favorite, :comments
   json.url review_url(review, format: :json)
 end

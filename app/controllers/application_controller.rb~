@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   def ensure_admin
     unless current_user && current_user.admin?
       flash[:error] = "Sorry, you're not authorized to do that."
-      redirect_to realtors_url
+      redirect_to scotches_url
     end
   end
 

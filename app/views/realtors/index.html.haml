@@ -1,0 +1,25 @@
+.container
+  %p#notice= notice
+  %h1 Search Realtors (By school)
+  = form_tag realtors_path, :method => 'get' do
+    %p
+      = text_field_tag :search, params[:search]
+      = submit_tag "Search", :class => 'btn btn-primary', :name => nil
+  - @realtors.each do |realtor|
+    .row
+      .col-md-10
+        %h2= realtor.name 
+        %h4= realtor.address 
+        %h4= realtor.college 
+        %h4
+          #{realtor.reviews.average(:score)}/5.0
+          rated
+          %i by
+          #{realtor.reviews.count} users
+
+        = link_to 'More Info', realtor
+        -if current_user.admin?
+          %td= link_to 'Edit', edit_realtor_path(realtor)
+          %td= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
+    .row{:style => 'margin-top: 15px'}
+

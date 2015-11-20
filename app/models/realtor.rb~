@@ -1,4 +1,4 @@
-class Scotch < ActiveRecord::Base
+class Realtor < ActiveRecord::Base
   has_many :reviews
   
   def self.search(search)

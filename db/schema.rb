@@ -13,27 +13,28 @@
 
 ActiveRecord::Schema.define(version: 20141031201237) do
 
-  create_table "reviews", force: true do |t|
-    t.integer  "score",      limit: 4
-    t.boolean  "had_it",     limit: 1
-    t.boolean  "want_it",    limit: 1
-    t.boolean  "favorite",   limit: 1
-    t.string   "comments",   limit: 1500
-    t.integer  "scotch_id",  limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+  create_table "realtors", force: true do |t|
+    t.string   "name",               limit: 255
+    t.string   "address",            limit: 255
+    t.string   "realtor_url",        limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
-  create_table "scotches", force: true do |t|
-    t.string   "name",               limit: 255
-    t.string   "location",          limit: 255
-    t.string   "college",    limit: 255
-    t.string   "website_url",     limit: 255
-    t.text     "description",              limit: 65535
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-
+  create_table "reviews", force: true do |t|
+    t.integer  "score",         limit: 4
+    t.integer  "affordability", limit: 4
+    t.integer  "helpfulness",   limit: 4
+    t.integer  "accomodation",  limit: 4
+    t.boolean  "favorite",      limit: 1
+    t.integer  "realtor_id",    limit: 4
+    t.integer  "user_id",       limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: true do |t|

@@ -7,9 +7,9 @@ class RealtorsController < ApplicationController
   def index
     @realtors = Realtor.all
     if params[:search]
-      @realtors = Scotch.search(params[:search])
+      @realtors = Realtor.search(params[:search])
     else
-      @realtors = Scotch.all
+      @realtors = Realtor.all
     end
   end
 
@@ -20,7 +20,7 @@ class RealtorsController < ApplicationController
 
   # GET /scotches/new
   def new
-    @scotch = Scotch.new
+    @realtor = Realtor.new
   end
 
   # GET /scotches/1/edit
@@ -30,15 +30,15 @@ class RealtorsController < ApplicationController
   # POST /scotches
   # POST /scotches.json
   def create
-    @scotch = Scotch.new(scotch_params)
+    @realtor = Realtor.new(realtor_params)
 
     respond_to do |format|
-      if @scotch.save
-        format.html { redirect_to @scotch, notice: 'Realtor was successfully created.' }
-        format.json { render :show, status: :created, location: @scotch }
+      if @realtor.save
+        format.html { redirect_to @realtor, notice: 'Realtor was successfully created.' }
+        format.json { render :show, status: :created, location: @realtor }
       else
         format.html { render :new }
-        format.json { render json: @scotch.errors, status: :unprocessable_entity }
+        format.json { render json: @realtor.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -47,12 +47,12 @@ class RealtorsController < ApplicationController
   # PATCH/PUT /scotches/1.json
   def update
     respond_to do |format|
-      if @scotch.update(scotch_params)
-        format.html { redirect_to @scotch, notice: 'Realtor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @scotch }
+      if @realtor.update(realtor_params)
+        format.html { redirect_to @realtor, notice: 'Realtor was successfully updated.' }
+        format.json { render :show, status: :ok, location: @realtor }
       else
         format.html { render :edit }
-        format.json { render json: @scotch.errors, status: :unprocessable_entity }
+        format.json { render json: @realtor.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,7 +60,7 @@ class RealtorsController < ApplicationController
   # DELETE /scotches/1
   # DELETE /scotches/1.json
   def destroy
-    @scotch.destroy
+    @realtor.destroy
     respond_to do |format|
       format.html { redirect_to realtors_url, notice: 'Realtor was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,12 +69,12 @@ class RealtorsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_scotch
-      @scotch = Scotch.find(params[:id])
+    def set_realtor
+      @realtor = Realtor.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def scotch_params
-      params.require(:scotch).permit(:name, :location, :college, :website_url, :description, :search)
+    def realtor_params
+      params.require(:realtor).permit(:name, :address, :college, :realtor_url, :search)
     end
 end

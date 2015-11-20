@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = Review.new(params[:realtor_id])
   end
 
   # GET /reviews/1/edit
@@ -69,6 +69,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:score, :had_it, :want_it, :favorite, :scotch_id, :user_id)
+      params.require(:review).permit(:score, :affordability, :helpfulness, :accomodations, :favorite, :realtor_id, :user_id, :comments)
     end
 end

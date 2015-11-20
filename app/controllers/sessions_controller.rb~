@@ -2,14 +2,14 @@ class SessionsController < ApplicationController
   skip_before_action :ensure_logged_in, only: [:new, :facebook_create]
 
   def new #homepage
-    # if logged in, redirect to realtors index
+    # if logged in, redirect to scotches index
     render :new, layout: 'home'
   end
 
   def facebook_create
     @user = User.find_or_create_from_auth_hash(auth_hash)
     session[:user_id] = @user.id
-    redirect_to realtors_path
+    redirect_to scotches_path
   end
 
   def destroy

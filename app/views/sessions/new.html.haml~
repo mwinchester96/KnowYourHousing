@@ -6,14 +6,14 @@
           %tbody.max-size
             %tr.max-size
               %td.max-size
-                =image_tag 'logos/realtorLogo.gif', style: 'width: 100%'
+                =image_tag 'logos/realtorlogo.png', style: 'width: 100%'
       .col-md-6.col-sm-6.max-size
         %table.max-size
           %tbody.max-size
             %tr.max-size
               %td.max-size
                 %h1{style: 'line-height: .9'}
-                  %div Help Find
+                  %div Discover & Share
                   %div
                     %i{style: 'font-size: 60%; position: relative; top: -5px'} the
                   %div
@@ -31,13 +31,13 @@
           %tbody.max-size
             %tr.max-size
               %td.max-size
-                =image_tag 'logos/scotty_huge_white.png', style: 'width: 100%'
+                =image_tag 'logos/realtorlogo.png', style: 'width: 100%'
                 %h1{style: 'line-height: .9'}
-                  %div Help Find
+                  %div Discover & Share
                   %div
-                    %i{style: 'font-size: 60%; position: relative; top: -5px'} the
+                    %i{style: 'font-size: 60%; position: relative; top: -5px'} your
                   %div
-                    Best Realtors
+                    Favorite Scotches
                 %a.fb_login{href: '/auth/facebook'}
                   =image_tag 'facebook-icon.png', style: 'width: 20px'
                   Log In With Facebook
@@ -45,6 +45,3 @@
                   -flash.each do |k,v|
                     %div{:class => translate_flash_key_to_bootstrap_class(k), style: 'padding: 15px; width: 300px; margin: 10px auto'}
                       =v
-
-
-

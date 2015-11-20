@@ -1,5 +1,5 @@
 .container
-  %h1 Editing Scotch
+  %h1 Editing Realtor
 
   = render 'form'
 

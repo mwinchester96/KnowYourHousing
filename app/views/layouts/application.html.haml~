@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title RealtorRater
+    %title KnowYourHousing
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}
@@ -19,17 +19,18 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => scotches_path} RealtorRater
+          %a.navbar-brand{:href => realtors_path} RealtorRater
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => scotches_path} Find Realtors
+              %a{:href => realtors_path} Find Realtors
             %li
               %a{:href => new_review_path} + New Review
             %li
-              %a{:href => new_scotch_path} + New Realtor
-
+              %a{:href => new_realtor_path} + New Realtor
+            %li
+              %a{:href => 'https://docs.google.com/forms/d/16shRXlieAVyXQP5vBdIT64BB-2oQyemMUVmuEc6b0AA/viewform?usp=send_form'} Contact Us
           %ul.nav.navbar-nav.navbar-right
             %li
               =image_tag current_user.fb_image_url, style: 'height: 50px; padding: 5px;float: left;'
