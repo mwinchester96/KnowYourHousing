@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new(params[:realtor_id])
+    @review = Review.new
   end
 
   # GET /reviews/1/edit

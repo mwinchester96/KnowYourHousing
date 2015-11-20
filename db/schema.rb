@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20141130181604) do
     t.string   "fb_location",      limit: 255
     t.string   "oauth_token",      limit: 255
     t.datetime "oauth_expires_at"
-    t.string   "fb_uid",           limit: 255
+    t.string   "fb_uid",         
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "role",                         default: 0
