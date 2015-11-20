@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031201237) do
+ActiveRecord::Schema.define(version: 20141130181604) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "realtors", force: true do |t|
     t.string   "name",               limit: 255
@@ -21,20 +24,21 @@ ActiveRecord::Schema.define(version: 20141031201237) do
     t.datetime "updated_at",                     null: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
+    t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "college"
   end
 
   create_table "reviews", force: true do |t|
-    t.integer  "score",         limit: 4
-    t.integer  "affordability", limit: 4
-    t.integer  "helpfulness",   limit: 4
-    t.integer  "accomodation",  limit: 4
-    t.boolean  "favorite",      limit: 1
-    t.integer  "realtor_id",    limit: 4
-    t.integer  "user_id",       limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "score"
+    t.integer  "affordability"
+    t.integer  "helpfulness"
+    t.integer  "accomodation"
+    t.integer  "realtor_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "comments"
   end
 
   create_table "users", force: true do |t|
@@ -49,7 +53,7 @@ ActiveRecord::Schema.define(version: 20141031201237) do
     t.string   "fb_uid",           limit: 255
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.integer  "role",             limit: 4,   default: 0
+    t.integer  "role",                         default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

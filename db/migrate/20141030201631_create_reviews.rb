@@ -5,7 +5,6 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :affordability
       t.integer :helpfulness
       t.integer :accomodation
-      t.boolean :favorite
       t.integer :realtor_id
       t.integer :user_id
 

@@ -1,20 +1,28 @@
 default: &default
-  adapter: mysql
+  adapter: postgresql
   encoding: utf8
   database: realtor
-  username: root
+  username: postgres
   password: mwinchester96
-  host: 127.0.0.1
+  host: localhost
   port: 3306
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: postgres_realtor
+  pool: 5
+  username: postgres
+  password: mwinchester96
 
 development:
   <<: *default
-  database: realtor
+  database: postgres_realtor
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: realtor
+  database: postgres_realtor
 
