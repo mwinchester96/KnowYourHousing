@@ -1,0 +1,78 @@
+= form_for(@dorm_review) do |f|
+  - if @dorm_review.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@dorm_review.errors.count, "error")
+        prohibited this review from being saved:
+      %ul
+        - @dorm_review.errors.full_messages.each do |message|
+          %li= message
+ 
+  
+  .form-group
+    %b Score
+    %br
+    -(1..5).each do |i|
+      = f.label :score, :class => 'radio-inline' do
+        = f.radio_button :score, i
+        =i
+
+  .form-group
+    %b Cost
+    %br
+    -(1..5).each do |i|
+      = f.label :cost, :class => 'radio-inline' do
+        = f.radio_button :cost, i
+        =i
+
+  .form-group
+    %b Location
+    %br
+    -(1..5).each do |i|
+      = f.label :location, :class => 'radio-inline' do
+        = f.radio_button :location, i
+        =i
+
+  .form-group
+    %b Condition
+    %br
+    -(1..5).each do |i|
+      = f.label :condition, :class => 'radio-inline' do
+        = f.radio_button :condtion, i
+        =i
+
+  .form-group
+    %b Nightlife
+    %br
+    -(1..5).each do |i|
+      = f.label :nightlife, :class => 'radio-inline' do
+        = f.radio_button :nightlife, i
+        =i
+
+  .form-group
+    %b Bathrooms per Hall
+    %br
+    -(1..10).each do |i|
+      = f.label :bathrooms_per_hall, :class => 'radio-inline' do
+        = f.radio_button :bathrooms_per_hall, i
+        =i
+
+  =f.hidden_field(:dorm_id, :value => (params[:dorm_id]))
+
+  .form-group
+    %b Comments
+    =f.text_field :comments, :value => "No comments"
+
+  =f.hidden_field(:user_id, :value => current_user.id)
+
+  .form-group
+    = f.submit 'Save', :class => 'btn btn-primary'
+
+
+
+
+
+
+
+
+

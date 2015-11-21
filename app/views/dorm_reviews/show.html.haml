@@ -1,0 +1,30 @@
+.container
+  %p#notice= notice
+  %p
+    %strong Dorm:
+    = @dorm_review.dorm_id
+  %p
+    %strong Score:
+    = @dorm_review.score
+  %p
+    %strong Cost:
+    = @dorm_review.cost
+  %p
+    %strong Location:
+    = @dorm_review.location
+  %p
+    %strong Condition:
+    = @dorm_review.condition
+  %p
+    %strong Nightlife:
+    = @dorm_review.nightlife
+  %p
+    %strong Bathrooms Per Hall:
+    = @dorm_review.bathrooms_per_hall
+  %p
+    %strong Comments:
+    = @dorm_review.comments
+
+  = link_to 'Edit', edit_dorm_review_path(@dorm_review)
+  |
+  \#{link_to 'Back', dorm_reviews_path}

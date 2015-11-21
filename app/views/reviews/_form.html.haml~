@@ -7,10 +7,8 @@
       %ul
         - @review.errors.full_messages.each do |message|
           %li= message
-  .form-group
-    %b Realtor
-    =f.collection_select(:realtor_id, Realtor.all, :id, :name, prompt: true)
-
+ 
+  
   .form-group
     %b Score
     %br
@@ -39,14 +37,26 @@
     %b Accomodations
     %br
     -(1..5).each do |i|
-      = f.label :accomodations, :class => 'radio-inline' do
+      = f.label :accomodation, :class => 'radio-inline' do
         = f.radio_button :accomodation, i
         =i
+
+  =f.hidden_field(:realtor_id, :value => (params[:realtor_id]))
 
   .form-group
     %b Comments
     =f.text_field :comments, :value => "No comments"
 
-  =f.hidden_field :user_id, :value => current_user.id
+  =f.hidden_field(:user_id, :value => current_user.id)
+
   .form-group
     = f.submit 'Save', :class => 'btn btn-primary'
+
+
+
+
+
+
+
+
+

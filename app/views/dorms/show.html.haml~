@@ -1,0 +1,61 @@
+.container
+  .row
+    .col-md-8
+      %h1
+        = @dorm.name
+      %hr
+      %p
+        %strong Address:
+        = @dorm.address
+      %p
+        %strong College:
+        = @dorm.college
+      %p
+        %strong Score:
+        #{@dorm.dorm_reviews.average(:score)}/5.0
+        rated
+        %i by
+        #{@dorm.dorm_reviews.count} users
+      %p
+        %strong Cost:
+        #{@dorm.dorm_reviews.average(:cost)}/5.0
+        rated
+        %i by
+        #{@dorm.dorm_reviews.count} users
+      %p
+        %strong Location:
+        #{@dorm.dorm_reviews.average(:location)}/5.0
+        rated
+        %i by
+        #{@dorm.dorm_reviews.count} users
+      %p
+        %strong Condition:
+        #{@dorm.dorm_reviews.average(:condition)}/5.0
+        rated
+        %i by
+        #{@dorm.dorm_reviews.count} users
+      %p
+        %strong Night Life:
+        #{@dorm.dorm_reviews.average(:nightlife)}/5.0
+        rated
+        %i by
+        #{@dorm.dorm_reviews.count} users
+      %p
+        %strong Bathrooms per Hall:
+        #{@dorm.dorm_reviews.average(:bathrooms_per_hall)}/5.0
+        rated
+        %i by
+        #{@dorm.dorm_reviews.count} users
+      %p
+        %strong Reviews:
+        - @dorm.dorm_reviews.each do |i|
+          %h3= i.comments
+          %i= i.created_at.to_s(:long)
+
+
+      -if current_user.admin?
+        = link_to 'Edit', edit_dorm_path(@dorm)
+
+      #{link_to 'Back ', dorms_path}|
+      #{link_to 'Review', new_dorm_review_path(:dorm_id => @dorm.id, :dorm_name => @dorm.name)}
+    .col-md-8

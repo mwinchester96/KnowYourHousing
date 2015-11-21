@@ -1,0 +1,62 @@
+= form_for(@property_review) do |f|
+  - if @property_review.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@property_review.errors.count, "error")
+        prohibited this review from being saved:
+      %ul
+        - @property_review.errors.full_messages.each do |message|
+          %li= message
+ 
+  
+  .form-group
+    %b Score
+    %br
+    -(1..5).each do |i|
+      = f.label :score, :class => 'radio-inline' do
+        = f.radio_button :score, i
+        =i
+
+  .form-group
+    %b Cost
+    %br
+    -(1..5).each do |i|
+      = f.label :cost, :class => 'radio-inline' do
+        = f.radio_button :cost, i
+        =i
+
+  .form-group
+    %b Location
+    %br
+    -(1..5).each do |i|
+      = f.label :location, :class => 'radio-inline' do
+        = f.radio_button :location, i
+        =i
+
+  .form-group
+    %b Condtion
+    %br
+    -(1..5).each do |i|
+      = f.label :condition, :class => 'radio-inline' do
+        = f.radio_button :condition, i
+        =i
+
+  .form-group
+    %b Comments
+    =f.text_field :comments, :value => "No comments"
+
+  
+  =f.hidden_field(:user_id, :value => current_user.id)
+  =f.hidden_field(:property_id, :value => (params[:property_id]))
+
+  .form-group
+    = f.submit 'Save', :class => 'btn btn-primary'
+
+
+
+
+
+
+
+
+

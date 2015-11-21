@@ -26,9 +26,9 @@
             %li
               %a{:href => realtors_path} Find Realtors
             %li
-              %a{:href => new_review_path} + New Review
-            %li
               %a{:href => new_realtor_path} + New Realtor
+            %li
+              %a{:href => new_dorm_path} + New Dorm
             %li
               %a{:href => 'https://docs.google.com/forms/d/16shRXlieAVyXQP5vBdIT64BB-2oQyemMUVmuEc6b0AA/viewform?usp=send_form'} Contact Us
           %ul.nav.navbar-nav.navbar-right
@@ -40,8 +40,10 @@
                 %span.caret
               %ul.dropdown-menu{:role => "menu"}
                 %li
+                  %a{:href => user_path(current_user)} View Profile
+                %li
                   =link_to 'Log out', session_path(current_user), :method => 'delete'
-                  =link_to 'Log out', session_path(current_user), :method => 'delete'
+
     -if flash.any?
       %div{:style => 'margin-top: -20px'}
         -flash.each do |k,v|

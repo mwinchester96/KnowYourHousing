@@ -2,7 +2,12 @@
   .row
     .col-md-8
       %h1
-        = @user.first_name 
+        %strong First Name:
+        = current_user.first_name 
+      %p
+        %strong Last Name:
+        = current_user.email
+
 
 
     .col-md-8

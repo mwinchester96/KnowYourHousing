@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :realtors
+  resources :properties
+  resources :property_reviews
+  resources :dorms
+  resources :dorm_reviews
   resources :reviews
   resources :users
   resources :sessions

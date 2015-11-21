@@ -11,22 +11,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130181604) do
+ActiveRecord::Schema.define(version: 20143560181604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "realtors", force: true do |t|
-    t.string   "name",               limit: 255
-    t.string   "address",            limit: 255
-    t.string   "realtor_url",        limit: 255
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+  create_table "dorm_reviews", force: true do |t|
+    t.integer  "score"
+    t.integer  "cost"
+    t.integer  "location"
+    t.integer  "condition"
+    t.integer  "nightlife"
+    t.integer  "bathrooms_per_hall"
+    t.integer  "dorm_id"
+    t.integer  "user_id"
+    t.string   "comments"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "dorms", force: true do |t|
+    t.string   "address"
     t.string   "college"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "properties", force: true do |t|
+    t.string   "address"
+    t.integer  "realtor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "property_reviews", force: true do |t|
+    t.integer  "score"
+    t.integer  "cost"
+    t.integer  "location"
+    t.integer  "condition"
+    t.integer  "property_id"
+    t.integer  "user_id"
+    t.string   "comments"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "realtors", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "college"
+    t.string   "realtor_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "reviews", force: true do |t|
@@ -42,18 +79,18 @@ ActiveRecord::Schema.define(version: 20141130181604) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "nick",             limit: 255
-    t.string   "email",            limit: 255
-    t.string   "first_name",       limit: 255
-    t.string   "last_name",        limit: 255
-    t.string   "fb_image_url",     limit: 255
-    t.string   "fb_location",      limit: 255
-    t.string   "oauth_token",      limit: 255
+    t.string   "nick"
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "fb_image_url"
+    t.string   "fb_location"
+    t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.string   "fb_uid",         
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.integer  "role",                         default: 0
+    t.string   "fb_uid"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "role",             default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

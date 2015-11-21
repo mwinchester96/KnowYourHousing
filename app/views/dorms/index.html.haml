@@ -1,0 +1,28 @@
+.container
+  %p#notice= notice
+  %h1 Search Dorms (By school)
+  = form_tag dorms_path, :method => 'get' do
+    %p
+      = text_field_tag :search, params[:search]
+      = submit_tag "Search", :class => 'btn btn-primary', :name => nil
+    %hr
+  - @dorms.each do |dorm|
+    .row
+      .col-md-10
+        %h2= dorm.name 
+        %h4= dorm.address 
+        %h4= dorm.college 
+        %h4
+          #{dorm.dorm_reviews.average(:score)}/5.0
+          rated
+          %i by
+          #{dorm.dorm_reviews.count} users
+
+        = link_to 'More Info', dorm
+        -if current_user.admin?
+          %td= link_to 'Edit', edit_dorm_path(dorm)
+          %td= link_to 'Destroy', dorm, method: :delete, data: { confirm: 'Are you sure?' }
+    %hr
+
+    .row{:style => 'margin-top: 15px'}
+

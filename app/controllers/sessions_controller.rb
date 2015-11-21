@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 
   def facebook_create
     @user = User.find_or_create_from_auth_hash(auth_hash)
+    session[:first_name] = @user.first_name
     session[:user_id] = @user.id
     redirect_to realtors_path
   end

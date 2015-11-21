@@ -1,8 +1,8 @@
 .container
   %p#notice= notice
   %p
-    %strong Scotch:
-    = @review.realtor.name
+    %strong Realtor:
+    = @realtor.name.where(:id => @review.realtor_id)
   %p
     %strong Score:
     = @review.score
@@ -15,9 +15,6 @@
   %p
     %strong Affordability:
     = @review.affordability
-  %p
-    %strong Favorite:
-    = @review.favorite
   %p
     %strong Comments:
     = @review.comments

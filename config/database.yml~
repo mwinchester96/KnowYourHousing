@@ -4,7 +4,7 @@ default: &default
   database: realtor
   username: postgres
   password: mwinchester96
-  host: 127.0.0.1
+  host: localhost
   port: 3306
 
 default: &default

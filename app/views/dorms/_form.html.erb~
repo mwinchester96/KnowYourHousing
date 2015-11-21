@@ -1,0 +1,31 @@
+<%= form_for(@dorm) do |f| %>
+  <% if @dorm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dorm.errors.count, "error") %> prohibited this dorm from being saved:</h2>
+
+      <ul>
+      <% @dorm.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field" style="padding-bottom:10px;">
+    <%= f.label :college %><br>
+    <%= f.text_field :college %>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit 'Save', :class => 'btn btn-primary'%>
+  </div>
+<% end %>
