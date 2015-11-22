@@ -3,4 +3,4 @@
 
   = render 'form'
 
-  = link_to 'Back', scotches_path
+  = link_to 'Back', realtors_path
