@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully updated.'}
+        format.html { redirect_to @review.realtor, notice: 'Review was successfully updated.'}
         #aformat.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
