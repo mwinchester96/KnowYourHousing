@@ -5,6 +5,7 @@
     %p
       = text_field_tag :search, params[:search]
       = submit_tag "Search", :class => 'btn btn-primary', :name => nil
+    %hr
   - @realtors.each do |realtor|
     .row
       .col-md-10
@@ -17,10 +18,12 @@
           %i by
           #{realtor.reviews.count} users
 
-        = link_to 'More Info', realtor
-        -if current_user.admin?
-          %td= link_to 'Edit', edit_realtor_path(realtor)
-          %td= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'More Info', realto
+r
+        -if current_user
+          -if current_user.admin?
+            %td= link_to 'Edit', edit_realtor_path(realtor)
+            %td= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
     %hr
     .row{:style => 'margin-top: 15px'}
 

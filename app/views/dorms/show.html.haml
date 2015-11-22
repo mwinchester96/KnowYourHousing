@@ -53,9 +53,11 @@
           %i= i.created_at.to_s(:long)
 
 
-      -if current_user.admin?
-        = link_to 'Edit', edit_dorm_path(@dorm)
-
-      #{link_to 'Back ', dorms_path}|
-      #{link_to 'Review', new_dorm_review_path(:dorm_id => @dorm.id, :dorm_name => @dorm.name)}
+      -if current_user
+        -if current_user.admin?
+          = link_to 'Edit', edit_dorm_path(@dorm)
+     
+      #{link_to 'Back ', dorms_path}
+      -if current_user
+        |#{link_to 'Review', new_dorm_review_path(:dorm_id => @dorm.id, :dorm_name => @dorm.name)}
     .col-md-8

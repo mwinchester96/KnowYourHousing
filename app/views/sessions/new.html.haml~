@@ -21,6 +21,8 @@
                 %a.fb_login{href: '/auth/facebook'}
                   =image_tag 'facebook-icon.png', style: 'width: 20px'
                   Log In With Facebook
+                %a.fb_login{href: '/realtors'}
+                  Continue Without Logging In
                 -if flash.any?
                   -flash.each do |k,v|
                     %div{:class => translate_flash_key_to_bootstrap_class(k), style: 'padding: 15px; width: 300px; margin: 10px auto'}
@@ -43,5 +45,5 @@
                   Log In With Facebook
                 -if flash.any?
                   -flash.each do |k,v|
-                    %div{:class => translate_flash_key_to_bootstrap_class(k), style: 'padding: 15px; width: 300px; margin: 10px auto'}
+                    %div{:class => translate_flash_key_to_bootstrap_class(k), style: 'padding: 15px; width: 300px; '}
                       =v

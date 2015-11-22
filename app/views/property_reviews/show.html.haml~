@@ -2,19 +2,19 @@
   %p#notice= notice
   %p
     %strong Score:
-    = @property_review.score
+    =@property_review.score
   %p
     %strong Cost:
-    = @property_review.cost
+    =@property_review.cost
   %p
     %strong Location:
-    = @property_review.location
+    =@property_review.location
   %p
     %strong Condition:
-    = @property_review.condition
+    =@property_review.condition
   %p
     %strong Comments:
-    = @property_review.comments
+    =@property_review.comments
 
   = link_to 'Edit', edit_property_review_path(@property_review)
   |

@@ -23,8 +23,6 @@
           %td= link_to 'Edit', edit_dorm_path(dorm)
           %td= link_to 'Destroy', dorm, method: :delete, data: { confirm: 'Are you sure?' }
     %hr
-    %h1 Don't see your dorm? 
-    %a
-      ={:href => dorms#index} Add It!
+
     .row{:style => 'margin-top: 15px'}
 
