@@ -28,8 +28,8 @@ class DormReviewsController < ApplicationController
 
     respond_to do |format|
       if @dorm_review.save
-        format.html { redirect_to @dorm_review, notice: 'Dorm Review was successfully recorded.'}
-        format.json { render :show, status: :created, location: @dorm_review }
+        format.html { redirect_to @dorm_review.dorm, notice: 'Dorm Review was successfully recorded.'}
+        #format.json { render :show, status: :created, location: @dorm_review }
       else
         format.html { render :new }
         format.json { render json: @dorm_review.errors, status: :unprocessable_entity }

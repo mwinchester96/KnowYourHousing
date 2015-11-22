@@ -56,4 +56,11 @@
                 %span{"aria-hidden" => "true"} ×
                 %span.sr-only Close
 
-    = yield
+    .container
+      = yield
+
+    
+    %nav.navbar.navbar-default.navbar-fixed-bottom{:role => "navigation"}
+      .container.text-center
+        %p.navbar-text.col-md-12.col-sm-12.col-xs-12 &copy; Know Your Housing 2015
+

@@ -28,6 +28,8 @@
             %li
               %a{:href => new_realtor_path} + New Realtor
             %li
+              %a{:href => dorms_path} Find Dorms
+            %li
               %a{:href => new_dorm_path} + New Dorm
             %li
               %a{:href => 'https://docs.google.com/forms/d/16shRXlieAVyXQP5vBdIT64BB-2oQyemMUVmuEc6b0AA/viewform?usp=send_form'} Contact Us
@@ -54,4 +56,11 @@
                 %span{"aria-hidden" => "true"} ×
                 %span.sr-only Close
 
-    = yield
+    .container
+      = yield
+
+    
+    %nav.navbar.navbar-default.navbar-fixed-bottom{:role => "navigation"}
+      .container.text-center
+        %p.navbar-text &copy; Know Your Housing 2015
+
