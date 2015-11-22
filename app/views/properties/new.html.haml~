@@ -1,5 +1,5 @@
 .container
-  %h1 New Property
+  %h1 New Property for #{params[:realtor_name]}
 
   = render 'form'
 
