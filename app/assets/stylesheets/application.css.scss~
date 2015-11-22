@@ -27,7 +27,7 @@ body {
 
 select {
 	    padding-bottom: 5px;
-            width:12px;
-            border:none;
+            width:175px;
+            border:2px solid black;
             background:#fff;
         }
