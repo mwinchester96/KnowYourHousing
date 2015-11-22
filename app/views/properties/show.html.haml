@@ -39,5 +39,5 @@
 
       #{link_to 'Back ', properties_path(:realtor_id => @property.realtor.id, :realtor_name => @property.realtor.name)}
       -if current_user
-        |#{link_to 'Review', new_property_review_path(:address => @property.address, :property_id => @property.id)}
+        |#{link_to ' Review', new_property_review_path(:address => @property.address, :property_id => @property.id)}
     .col-md-8
