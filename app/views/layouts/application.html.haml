@@ -52,6 +52,11 @@
                     %a{:href => user_path(current_user)} View Profile
                   %li
                     =link_to 'Log out', session_path(current_user), :method => 'delete'
+          -else
+            %ul.nav.navbar-nav.navbar-right
+              %a.fb_login{href: '/auth/facebook'}
+                =image_tag 'facebook-icon.png', style: 'width: 20px'
+                Log In With Facebook
 
     -if flash.any?
       %div{:style => 'margin-top: -20px'}

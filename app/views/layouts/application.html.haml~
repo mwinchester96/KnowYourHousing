@@ -39,19 +39,24 @@
                 %a{:href => realtors_path} Find Realtors
               %li
                 %a{:href => dorms_path} Find Dorms
-
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              =image_tag current_user.fb_image_url, style: 'height: 50px; padding: 5px;float: left;'
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                =current_user.first_name
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => user_path(current_user)} View Profile
-                %li
-                  =link_to 'Log out', session_path(current_user), :method => 'delete'
+          -if current_user
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                =image_tag current_user.fb_image_url, style: 'height: 50px; padding: 5px;float: left;'
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  =current_user.first_name
+                  %span.caret
+                %ul.dropdown-menu{:role => "menu"}
+                  %li
+                    %a{:href => user_path(current_user)} View Profile
+                  %li
+                    =link_to 'Log out', session_path(current_user), :method => 'delete'
+          -else
+            %ul.nav.navbar-nav.navbar-right
+              %a{href: '/auth/facebook'}
+                =image_tag 'facebook-icon.png', style: 'width: 20px'
+                Log In With Facebook
 
     -if flash.any?
       %div{:style => 'margin-top: -20px'}
