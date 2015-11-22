@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   def ensure_admin
     unless current_user && current_user.admin?
       flash[:error] = "Sorry, you're not authorized to do that."

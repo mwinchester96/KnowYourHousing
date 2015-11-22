@@ -39,9 +39,13 @@
 
       -if current_user.admin?
         = link_to 'Edit', edit_realtor_path(@realtor)
+      -if current_user
+        =#{link_to 'Back ', realtors_path}|
+        #{link_to 'Review ', new_review_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}|
+        #{link_to 'Look at Their Properties ', properties_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}|
+        #{link_to 'Add a Property', new_property_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}
+      -else
+        =#{link_to 'Back ', realtors_path}|
+        #{link_to 'Look at Their Properties ', properties_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}|
 
-      #{link_to 'Back ', realtors_path}|
-      #{link_to 'Review ', new_review_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}|
-      #{link_to 'Look at Their Properties ', properties_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}|
-      #{link_to 'Add a Property', new_property_path(:realtor_id => @realtor.id, :realtor_name => @realtor.name)}
     .col-md-8

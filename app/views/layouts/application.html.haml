@@ -23,16 +23,23 @@
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li
-              %a{:href => realtors_path} Find Realtors
-            %li
-              %a{:href => new_realtor_path} + New Realtor
-            %li
-              %a{:href => dorms_path} Find Dorms
-            %li
-              %a{:href => new_dorm_path} + New Dorm
-            %li
-              %a{:href => 'https://docs.google.com/forms/d/16shRXlieAVyXQP5vBdIT64BB-2oQyemMUVmuEc6b0AA/viewform?usp=send_form'} Contact Us
+            - if ensure_logged_in
+		    %li
+		      %a{:href => realtors_path} Find Realtors
+		    %li
+		      %a{:href => new_realtor_path} + New Realtor
+		    %li
+		      %a{:href => dorms_path} Find Dorms
+		    %li
+		      %a{:href => new_dorm_path} + New Dorm
+		    %li
+		      %a{:href => 'https://docs.google.com/forms/d/16shRXlieAVyXQP5vBdIT64BB-2oQyemMUVmuEc6b0AA/viewform?usp=send_form'} Contact Us
+            - else
+		    %li
+		      %a{:href => realtors_path} Find Realtors
+		    %li
+		      %a{:href => dorms_path} Find Dorms
+
           %ul.nav.navbar-nav.navbar-right
             %li
               =image_tag current_user.fb_image_url, style: 'height: 50px; padding: 5px;float: left;'
