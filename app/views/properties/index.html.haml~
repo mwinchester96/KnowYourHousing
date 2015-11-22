@@ -14,10 +14,11 @@
           #{property.property_reviews.count} users
 
         = link_to 'More Info', property
-        -if current_user.admin?
-          %td= link_to 'Edit', edit_property_path(property)
-          %td= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }
+        -if current_user 
+          -if current_user.admin?
+            %td= link_to 'Edit', edit_property_path(property)
+            %td= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }
     %hr
-
+    #{link_to 'Back ', realtors_path}
     .row{:style => 'margin-top: 15px'}
 
