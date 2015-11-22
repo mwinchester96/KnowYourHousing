@@ -24,3 +24,9 @@ $headings-font-family: 'Cardo', 'Georgia', serif;
 body {
   padding-bottom: 60px;
 }
+
+select::-ms-expand {
+            width:12px;
+            border:none;
+            background:#fff;
+        }

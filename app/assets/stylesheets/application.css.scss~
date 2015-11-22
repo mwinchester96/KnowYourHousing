@@ -19,7 +19,7 @@
 
 $font-family-serif: 'Cardo', 'Georgia', serif;
 $headings-font-family: 'Cardo', 'Georgia', serif;
-@import "twitter/bootstrap";
+@import "bootstrap";
 
 body {
   padding-bottom: 60px;
