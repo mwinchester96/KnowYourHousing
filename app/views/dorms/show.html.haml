@@ -42,7 +42,7 @@
         #{@dorm.dorm_reviews.count} users
       %p
         %strong Bathrooms per Hall:
-        #{@dorm.dorm_reviews.average(:bathrooms_per_hall)}/5.0
+        #{@dorm.dorm_reviews.average(:bathrooms_per_hall)}
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
