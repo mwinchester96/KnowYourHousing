@@ -23,5 +23,5 @@
     %hr
 
   .row{:style => 'margin-top: 15px'}
-    #{link_to('Back to Landlord', @realtor)}
+    #{link_to('Back to Landlord', '/realtors/#{params[:realtor_id]}')}
 
