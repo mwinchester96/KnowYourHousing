@@ -1,6 +1,6 @@
 .container
   %h1 New Realtor
-
+  %hr
   = render 'form'
 
   = link_to 'Back', realtors_path
