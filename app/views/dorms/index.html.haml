@@ -1,6 +1,6 @@
 .container
   %p#notice= notice
-  %h1 Search Dorms (By school)
+  %h1 Search Dorms
   = form_tag dorms_path, :method => 'get' do
     %p
       = text_field_tag :search, params[:search]
