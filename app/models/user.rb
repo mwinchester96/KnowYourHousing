@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   # Returns the user, or false in case of failure
   def self.find_or_create_from_auth_hash(hash)
     user = User.find_or_initialize_by(fb_uid: hash[:uid])
+    assert [user.first_name, user.last_name, user.nick, user.email,
+      user.fb_location, user.fb_image_url].none?(&:nil?)
     return user if user.persisted?
 
     user.first_name   = hash['info'][:first_name]
