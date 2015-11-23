@@ -36,6 +36,7 @@
       -if current_user
         -if current_user.admin?
           = link_to 'Edit', edit_property_path(@property)
+          = ' | '
 
       #{link_to 'Back ', properties_path(:realtor_id => @property.realtor.id, :realtor_name => @property.realtor.name)}
       -if current_user

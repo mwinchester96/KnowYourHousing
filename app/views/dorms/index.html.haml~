@@ -18,7 +18,7 @@
           %i by
           #{dorm.dorm_reviews.count} users
 
-        = link_to 'More Info', dorm
+
         -if current_user
           -if current_user.admin?
             %td= link_to 'Edit', edit_dorm_path(dorm)

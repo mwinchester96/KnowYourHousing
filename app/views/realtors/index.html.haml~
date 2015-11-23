@@ -9,7 +9,7 @@
   - @realtors.each do |realtor|
     .row
       .col-md-10
-        %h2= link_to realtor.name realtor
+        %h2= link_to(realtor.name,realtor)
         %h4= realtor.address 
         %h4= realtor.college 
         %h4
@@ -22,8 +22,8 @@
 
         -if current_user
           -if current_user.admin?
-            %td= link_to 'Edit', edit_realtor_path(realtor)
-            %td= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
+            %td= link_to 'Edit ', edit_realtor_path(realtor) '|'
+            %td= link_to ' Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
     %hr
     .row{:style => 'margin-top: 15px'}
 

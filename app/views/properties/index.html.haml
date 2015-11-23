@@ -17,7 +17,9 @@
         -if current_user 
           -if current_user.admin?
             %td= link_to 'Edit', edit_property_path(property)
-            %td= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }
+            %td= ' | '
+            %td= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } 
+
     %hr
 
     .row{:style => 'margin-top: 15px'}

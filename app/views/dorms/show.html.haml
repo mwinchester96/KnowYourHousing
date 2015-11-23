@@ -55,7 +55,8 @@
       
       -if current_user
         -if current_user.admin?
-          = link_to 'Edit', edit_dorm_path(@dorm)
+          = link_to 'Edit', edit_dorm_path(@dorm) 
+          = ' | '
      
       #{link_to 'Back ', dorms_path}
       -if current_user

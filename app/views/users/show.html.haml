@@ -2,14 +2,20 @@
   .row
     .col-md-8
       %h1
-        %strong First Name:
-        = current_user.first_name 
-      %h1
-        %strong Last Name:
-        = current_user.last_name
-      %h1
+        %strong Name:
+        = current_user.first_name + ' ' + current_user.last_name 
+
+      %h3
         %strong Email:
         = current_user.email
+      %h3
+        %strong Role:
+        = current_user.role
+      %h3
+        %strong Joined Realtor Rater at:
+        = current_user.created_at
+
+      
 
 
 
