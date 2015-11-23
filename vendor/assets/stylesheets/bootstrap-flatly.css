@@ -1,39 +1,17 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
+/*!
+ * bootswatch v3.3.5
+ * Homepage: http://bootswatch.com
+ * Copyright 2012-2015 Thomas Park
+ * Licensed under MIT
+ * Based on Bootstrap
+*/
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
-@import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic,700);
-@import "bootstrap-sprockets";
-
-$font-family-serif: 'Cardo', 'Georgia', serif;
-$headings-font-family: 'Cardo', 'Georgia', serif;
-@import "vendor/stylesheets/bootstrap-flatly.css";
-@import "bootstrap";
-
-
-body {
-  padding-bottom: 60px;
-}
-
-select {
-	    padding-bottom: 5px;
-            width:175px;
-            border:1px solid gray-light;
-            background:#fff;
-        }
-
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
