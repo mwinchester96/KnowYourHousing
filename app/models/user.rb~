@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
     user = User.find_or_initialize_by(fb_uid: hash[:uid])
     return user if user.persisted?
 
-    user.first_name   = hash['info'][:first_name]
-    user.last_name    = hash['info'][:last_name]
-    user.nick         = hash['info'][:nickname]
-    user.email        = hash['info'][:email]
+    user.first_name   = hash[:info][:first_name]
+    user.last_name    = hash[:info][:last_name]
+    user.nick         = hash[:info][:nickname]
+    user.email        = hash[:info][:email]
     user.fb_image_url = hash[:info][:image]
     user.fb_location  = hash[:info][:location]
     user.oauth_token  = hash[:credentials][:token]
