@@ -1,6 +1,6 @@
 .container
   %p#notice= notice
-  %h1 Search Dorms (By school)
+  %h1 Search Dorms
   = form_tag dorms_path, :method => 'get' do
     %p
       = text_field_tag :search, params[:search]
@@ -9,7 +9,7 @@
   - @dorms.each do |dorm|
     .row
       .col-md-10
-        %h2= dorm.name 
+        %h2= link_to(dorm.name, dorm) 
         %h4= dorm.address 
         %h4= dorm.college 
         %h4

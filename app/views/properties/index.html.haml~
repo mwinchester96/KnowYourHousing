@@ -21,5 +21,5 @@
     %hr
 
     .row{:style => 'margin-top: 15px'}
-    #{link_to 'Back to Realtors', realtors_path}
+  #{link_to 'Back to Realtors', realtors_path}
 

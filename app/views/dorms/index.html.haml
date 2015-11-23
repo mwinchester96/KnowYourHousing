@@ -9,7 +9,7 @@
   - @dorms.each do |dorm|
     .row
       .col-md-10
-        %h2= dorm.name 
+        %h2= link_to(dorm.name, dorm) 
         %h4= dorm.address 
         %h4= dorm.college 
         %h4
@@ -18,7 +18,7 @@
           %i by
           #{dorm.dorm_reviews.count} users
 
-        = link_to 'More Info', dorm
+
         -if current_user
           -if current_user.admin?
             %td= link_to 'Edit', edit_dorm_path(dorm)
