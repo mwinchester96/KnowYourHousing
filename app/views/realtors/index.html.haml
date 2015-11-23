@@ -13,7 +13,7 @@
         %h4= realtor.address 
         %h4= realtor.college 
         %h4
-          #{realtor.reviews.average(:score).round(1)}/5.0
+          #{realtor.reviews.average(:score).to_f.round(1)}/5.0
           rated
           %i by
           #{realtor.reviews.count} users

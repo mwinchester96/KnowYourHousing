@@ -1,6 +1,6 @@
 .container
   .row
-    .col-xs-5
+    .col-xs-4
       %h1
         = @realtor.name
       %hr
@@ -14,7 +14,7 @@
         %strong Website:
         = @realtor.realtor_url
 
-    .col-xs-5
+    .col-xs-4
       %h1
         Ratings
       %hr
@@ -37,7 +37,7 @@
         %i by
         #{@realtor.reviews.count} users
   .row
-    .col-md-10    
+    .col-md-8    
       %p
         %hr
         - @realtor.reviews.each do |i|

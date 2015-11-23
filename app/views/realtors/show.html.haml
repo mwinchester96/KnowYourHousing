@@ -20,19 +20,19 @@
       %hr
       %p
         %strong Affordability:
-        #{@realtor.reviews.average(:affordability).round(1)}/5.0
+        #{@realtor.reviews.average(:affordability).to_f.round(1)}/5.0
         rated
         %i by
         #{@realtor.reviews.count} users
       %p
         %strong Helpfulness:
-        #{@realtor.reviews.average(:helpfulness).round(1)}/5.0
+        #{@realtor.reviews.average(:helpfulness).to_f.round(1)}/5.0
         rated
         %i by
         #{@realtor.reviews.count} users
       %p
         %strong Accomodations:
-        #{@realtor.reviews.average(:accomodation).round(1)}/5.0
+        #{@realtor.reviews.average(:accomodation).to_f.round(1)}/5.0
         rated
         %i by
         #{@realtor.reviews.count} users
