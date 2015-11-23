@@ -9,7 +9,7 @@
   - @realtors.each do |realtor|
     .row
       .col-md-10
-        %h2= link_to realtor.name realtor
+        %h2= link_to(realtor.name,realtor)
         %h4= realtor.address 
         %h4= realtor.college 
         %h4
