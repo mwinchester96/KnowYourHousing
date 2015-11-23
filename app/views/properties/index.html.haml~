@@ -6,14 +6,14 @@
   - @properties.where(realtor_id: (params[:realtor_id])).each do |property|
     .row
       .col-md-10
-        %h2= property.address 
+        %h2= link_to(property.address, property) 
         %h4
           #{property.property_reviews.average(:score)}/5.0
           rated
           %i by
           #{property.property_reviews.count} users
 
-        = link_to 'More Info', property
+
         -if current_user 
           -if current_user.admin?
             %td= link_to 'Edit', edit_property_path(property)
@@ -21,5 +21,5 @@
     %hr
 
     .row{:style => 'margin-top: 15px'}
-  #{link_to 'Back to Realtors', realtors_path}
+  #{link_to 'Back to Realtors', property.realtor}
 
