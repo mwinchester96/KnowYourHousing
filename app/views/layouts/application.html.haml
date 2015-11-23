@@ -54,8 +54,8 @@
                     =link_to 'Log out', session_path(current_user), :method => 'delete'
           -else
             %ul.nav.navbar-nav.navbar-right
-              %h2 
-                =%a.{href: '/auth/facebook', Login with Facebook}
+              %h2=link_to('/auth/facebook', Login with Facebook)
+
               
                 
 

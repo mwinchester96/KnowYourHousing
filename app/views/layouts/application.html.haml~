@@ -55,7 +55,7 @@
           -else
             %ul.nav.navbar-nav.navbar-right
               %h2 
-              %a.{href: '/auth/facebook', Login with Facebook}
+                =%a.{href: '/auth/facebook', Login with Facebook}
               
                 
 
