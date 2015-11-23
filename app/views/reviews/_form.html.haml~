@@ -45,7 +45,7 @@
 
   .form-group
     %b Comments
-    =f.text_field :comments, :value => "No comments"
+    =f.text_area :comments, :value => "No comments"
 
   =f.hidden_field(:user_id, :value => current_user.id)
 
