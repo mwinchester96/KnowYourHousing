@@ -38,7 +38,7 @@
     %br
     -(1..5).each do |i|
       = f.label :condition, :class => 'radio-inline' do
-        = f.radio_button :condtion, i
+        = f.radio_button :condition, i
         =i
 
   .form-group

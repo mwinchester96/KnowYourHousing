@@ -42,9 +42,9 @@
         =i
 
   =f.hidden_field(:realtor_id, :value => (params[:realtor_id]))
-
+  %b Comments
   .form-group
-    =f.text_area(cols: 10, rows: 40) :comments, :value => "comments"
+    =f.text_area(:text, cols: '50', rows: '8', :value => "")
 
   =f.hidden_field(:user_id, :value => current_user.id)
 
