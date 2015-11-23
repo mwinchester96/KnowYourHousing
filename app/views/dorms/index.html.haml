@@ -13,7 +13,7 @@
         %h4= dorm.address 
         %h4= dorm.college 
         %h4
-          #{dorm.dorm_reviews.average(:score)}/5.0
+          #{dorm.dorm_reviews.average(:score).to_f.round(1)}/5.0
           rated
           %i by
           #{dorm.dorm_reviews.count} users

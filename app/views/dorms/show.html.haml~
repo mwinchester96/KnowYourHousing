@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-8
+    .col-xs-4
       %h1
         = @dorm.name
       %hr
@@ -12,50 +12,56 @@
         = @dorm.college
       %p
         %strong Score:
-        #{@dorm.dorm_reviews.average(:score)}/5.0
+        #{@dorm.dorm_reviews.average(:score).to_f.round(2)}/5.0
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
+    .col-xs-4
+      %h1 Ratings
+      %hr
       %p
         %strong Cost:
-        #{@dorm.dorm_reviews.average(:cost)}/5.0
+        #{@dorm.dorm_reviews.average(:cost).to_f.round(1)}/5.0
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
       %p
         %strong Location:
-        #{@dorm.dorm_reviews.average(:location)}/5.0
+        #{@dorm.dorm_reviews.average(:location).to_f.round(1)}/5.0
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
       %p
         %strong Condition:
-        #{@dorm.dorm_reviews.average(:condition)}/5.0
+        #{@dorm.dorm_reviews.average(:condition).to_f.round(1)}/5.0
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
       %p
         %strong Night Life:
-        #{@dorm.dorm_reviews.average(:nightlife)}/5.0
+        #{@dorm.dorm_reviews.average(:nightlife).to_f.round(1)}/5.0
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
       %p
         %strong Bathrooms per Hall:
-        #{@dorm.dorm_reviews.average(:bathrooms_per_hall)}
+        #{@dorm.dorm_reviews.average(:bathrooms_per_hall).to_f.round(1)}
         rated
         %i by
         #{@dorm.dorm_reviews.count} users
+  .row
+    .col-md-8  
       %p
         %hr
         - @dorm.dorm_reviews.each do |i|
           %h3= i.comments
           %i= i.created_at.to_s(:long)
 
-      
+      %hr
       -if current_user
         -if current_user.admin?
-          = link_to 'Edit', edit_dorm_path(@dorm)
+          = link_to 'Edit', edit_dorm_path(@dorm) 
+          = ' | '
      
       #{link_to 'Back ', dorms_path}
       -if current_user

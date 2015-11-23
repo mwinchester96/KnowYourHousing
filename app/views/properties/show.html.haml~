@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-8
+    .col-xs-4
       %h1
         = @property.address
       %p
@@ -9,6 +9,8 @@
         rated
         %i by
         #{@property.property_reviews.count} users
+    .col-xs-4
+      %h1 Ratings
       %p
         %strong Cost:
         #{@property.property_reviews.average(:cost)}/5.0
@@ -27,6 +29,8 @@
         rated
         %i by
         #{@property.property_reviews.count} users
+  .row
+    .col-md-8
       %p
         %hr
         - @property.property_reviews.each do |i|
@@ -36,6 +40,7 @@
       -if current_user
         -if current_user.admin?
           = link_to 'Edit', edit_property_path(@property)
+          = ' | '
 
       #{link_to 'Back ', properties_path(:realtor_id => @property.realtor.id, :realtor_name => @property.realtor.name)}
       -if current_user

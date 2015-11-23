@@ -1,8 +1,9 @@
 .container
   .row
-    .col-md-8
+    .col-xs-4
       %h1
         = @realtor.name
+      %hr
       %p
         %strong Address:
         = @realtor.address
@@ -12,24 +13,31 @@
       %p
         %strong Website:
         = @realtor.realtor_url
+
+    .col-xs-4
+      %h1
+        Ratings
+      %hr
       %p
         %strong Affordability:
-        #{@realtor.reviews.average(:affordability)}/5.0
+        #{@realtor.reviews.average(:affordability).round(1)}/5.0
         rated
         %i by
         #{@realtor.reviews.count} users
       %p
         %strong Helpfulness:
-        #{@realtor.reviews.average(:helpfulness)}/5.0
+        #{@realtor.reviews.average(:helpfulness).round(1)}/5.0
         rated
         %i by
         #{@realtor.reviews.count} users
       %p
         %strong Accomodations:
-        #{@realtor.reviews.average(:accomodation)}/5.0
+        #{@realtor.reviews.average(:accomodation).round(1)}/5.0
         rated
         %i by
         #{@realtor.reviews.count} users
+  .row
+    .col-md-8    
       %p
         %hr
         - @realtor.reviews.each do |i|
