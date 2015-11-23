@@ -22,6 +22,6 @@
 
     %hr
 
-    .row{:style => 'margin-top: 15px'}
+  .row{:style => 'margin-top: 15px'}
     #{link_to('Back to Realtor', property.realtor)}
 
