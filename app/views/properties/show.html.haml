@@ -3,6 +3,7 @@
     .col-xs-4
       %h1
         = @property.address
+      %hr
       %p
         %strong Score:
         #{@property.property_reviews.average(:score)}/5.0
