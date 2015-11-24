@@ -24,7 +24,7 @@ $headings-font-family: 'Cardo', 'Georgia', serif;
 
 
 body {
-  padding-bottom: 60px;
+  padding-bottom: 0;
 }
 
 select {
@@ -42,6 +42,7 @@ html {
 }
 body {
   margin: 0;
+  padding: 0;
 }
 article,
 aside,
@@ -1193,7 +1194,7 @@ hr {
   width: auto;
   height: auto;
   margin: 0;
-  overflow: visible;
+  overflow: hidden;
   clip: auto;
 }
 [role="button"] {
