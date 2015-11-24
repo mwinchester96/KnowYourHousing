@@ -27,5 +27,5 @@
             %td= '|'
             %td= link_to ' Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
     %hr
-    .row{:style => 'margin-top: 15px'}
+    .row{:style => 'margin-top: 15px; margin-bottom: 15px;'}
 
