@@ -47,3 +47,8 @@
                   -flash.each do |k,v|
                     %div{:class => translate_flash_key_to_bootstrap_class(k), style: 'padding: 15px; width: 300px; '}
                       =v
+
+    
+    %nav.navbar.navbar-default.navbar-fixed-bottom{:role => "navigation"}
+      .container.text-center
+        %p.navbar-text.col-md-12.col-sm-12.col-xs-12 &copy; Know Your Housing 2015
