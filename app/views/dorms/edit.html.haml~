@@ -1,7 +1,7 @@
 .container
-  %h1 Editing Realtor
+  %h1 Editing Dorm
 
   = render 'form'
 
-  = link_to 'Show', @realtor
-  = link_to 'Back', realtors_path
+  = link_to 'Show', @dorm
+  = link_to 'Back', dorms_path

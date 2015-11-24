@@ -25,5 +25,5 @@ class ApplicationController < ActionController::Base
       redirect_to realtors_url
     end
   end
-
+  helper_method :ensure_admin
 end

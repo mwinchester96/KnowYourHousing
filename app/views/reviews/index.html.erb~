@@ -1,5 +1,6 @@
+<%ensure_admin%>
 <p id="notice"><%= notice %></p>
-before_action: ensure_admin
+
 <h1>Listing Reviews</h1>
 
 <table>

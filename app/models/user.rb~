@@ -29,4 +29,13 @@ class User < ActiveRecord::Base
     user.save! && user
   end
 
+
+  def ensure_admin
+    unless current_user && current_user.admin?
+      flash[:error] = "Sorry, you're not authorized to do that."
+      redirect_to realtors_url
+    end
+  end
+  helper_method :ensure_admin
+
 end

@@ -3,5 +3,5 @@
 
   = render 'form'
 
-  = link_to 'Show', @scotch
-  = link_to 'Back', scotches_path
+  = link_to 'Show', @realtor
+  = link_to 'Back', realtors_path

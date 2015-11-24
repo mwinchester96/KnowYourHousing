@@ -27,7 +27,7 @@
         <td><%= dorm_review.bathrooms_per_hall %></td>
         <td><%= dorm_review.dorm_id %></td>
         <td><%= link_to 'Show', dorm_review %></td>
-        <td><%= link_to 'Edit', edit_dorm_review_path(review) %></td>
+        <td><%= link_to 'Edit', edit_dorm_review_path(dorm_review) %></td>
         <td><%= link_to 'Destroy', dorm_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Review', new_review_path %>
+<%= link_to 'New Review', new_dorm_review_path %>

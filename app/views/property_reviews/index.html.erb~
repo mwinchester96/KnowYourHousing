@@ -1,4 +1,3 @@
-<%-ensure_admin%>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Reviews</h1>
@@ -7,6 +6,7 @@
   <thead>
     <tr>
       <th>Score</th>
+      <th>Favorite</th>
       <th>Comments</th>
       <th colspan="3"></th>
     </tr>
@@ -16,6 +16,7 @@
     <% @reviews.each do |review| %>
       <tr>
         <td><%= review.score %></td>
+        <td><%= review.favorite %></td>
         <td><%= review.comments %></td>
         <td><%= link_to 'Show', review %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
