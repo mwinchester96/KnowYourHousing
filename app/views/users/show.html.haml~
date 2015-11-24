@@ -13,7 +13,7 @@
         = current_user.role
       %h3
         %strong Joined KnowYourHousing at:
-        = current_user.created_at.strftime("%FT%T")
+        = current_user.created_at.to_s(:long)
 
       
 
