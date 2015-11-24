@@ -13,7 +13,7 @@
   
   <div class="field" style="padding-bottom:10px;">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address , required: true%>
   </div>
 
   <%= f.hidden_field :realtor_id, :value => (params[:realtor_id]) %>

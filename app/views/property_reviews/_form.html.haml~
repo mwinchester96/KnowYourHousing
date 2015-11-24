@@ -40,9 +40,8 @@
       = f.label :condition, :class => 'radio-inline' do
         = f.radio_button :condition, i
         =i
-
+  %b Comments
   .form-group
-    %b Comments
     =f.text_area(:comments, cols: '50', rows: '8', :value => "")
 
   

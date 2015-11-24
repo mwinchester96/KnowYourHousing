@@ -12,15 +12,15 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name , required: true%>
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address , required: true%>
   </div>
   <div class="field" style="padding-bottom:10px;">
     <%= f.label :college %><br>
-    <%= f.select :college, options_for_select(["Wesleyan University", "UMass Amherst", "Williams College", "University of Connecticut", "Amherst College", "University of New Hampshire","Keene State College","Plymouth State College","Westfield State University"]), :prompt => "Select One"%>
+    <%= f.select :college, options_for_select(["Wesleyan University", "UMass Amherst", "Williams College", "University of Connecticut", "Amherst College", "University of New Hampshire","Keene State College","Plymouth State College","Westfield State University"]), :prompt => "Select One", required: true%>
   </div>
 
   
