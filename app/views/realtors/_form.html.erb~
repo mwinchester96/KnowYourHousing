@@ -20,8 +20,8 @@
     <%= f.text_field :address, required: true%>
   </div>
   <div class="field">
-    <%= f.label :college%><br>
-    <%= f.text_field :college%>
+    <%= f.label :college (optional)%><br>
+    <%= f.text_field :college %>
   </div>
   <div class="field" style="padding-bottom:10px;">
     <%= f.label :Website %><br>
