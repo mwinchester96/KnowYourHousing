@@ -1,8 +1,9 @@
-.container
+.centeredcontainer
   %p#notice= notice
   %h1
     Properties for #{params[:realtor_name]}
   %hr
+.container
   - @properties.where(realtor_id: (params[:realtor_id])).each do |property|
     .row
       .col-md-10

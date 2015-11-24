@@ -5,7 +5,7 @@
         = @property.address
       %hr
       %p
-        %strong Realtor:
+        %strong Landlord:
         #{@property.realtor.name}
       %p
         %strong Score:
