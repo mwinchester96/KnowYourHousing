@@ -1,4 +1,4 @@
-.centered-container
+.centeredcontainer
   %p#notice= notice
   %h1 Search Landlords 
   = form_tag realtors_path, :method => 'get' do
