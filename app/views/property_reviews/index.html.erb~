@@ -13,14 +13,14 @@
   </thead>
 
   <tbody>
-    <% @property_reviews.each do |review| %>
+    <% @property_reviews.each do |property_review| %>
       <tr>
-        <td><%= review.score %></td>
-        <td><%= review.favorite %></td>
-        <td><%= review.comments %></td>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_proeprty_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= property_review.score %></td>
+        <td><%= property_review.favorite %></td>
+        <td><%= property_review.comments %></td>
+        <td><%= link_to 'Show', property_review %></td>
+        <td><%= link_to 'Edit', edit_property_review_path(property_review) %></td>
+        <td><%= link_to 'Destroy', property_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
