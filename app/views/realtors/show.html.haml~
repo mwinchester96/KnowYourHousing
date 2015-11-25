@@ -42,7 +42,6 @@
         %hr
         - @realtor.reviews.each do |i|
           %h3= i.comments 
-          %i= i.user.to_s.first_name
           %i= i.created_at.to_s(:long)
 
       -if current_user

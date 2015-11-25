@@ -57,7 +57,7 @@
           %h3= i.comments
           %i= i.created_at.to_s(:long)
 
-      %hr
+
       -if current_user
         -if current_user.admin?
           = link_to 'Edit', edit_dorm_path(@dorm) 

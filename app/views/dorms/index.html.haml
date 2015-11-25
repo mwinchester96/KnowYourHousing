@@ -7,6 +7,9 @@
       = submit_tag "Search", :class => 'btn btn-primary', :name => nil
     %hr
 .container
+  -if(@dorms.count == 0)
+    %h4=link_to 'None exist yet, create one here!', new_dorm_path  
+    %hr
   - @dorms.each do |dorm|
     .row
       .col-md-10

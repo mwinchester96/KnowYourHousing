@@ -7,6 +7,8 @@
       = submit_tag "Search", :class => 'btn btn-primary', :name => nil
     %hr
 .container
+  -if(@realtors.count == 0)
+    %h4=link_to 'None exist yet, create one here!', new_realtor_path
   - @realtors.each do |realtor|
     .row
       .col-md-10
@@ -27,5 +29,5 @@
             %td= '|'
             %td= link_to ' Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' }
     %hr
-    .row{:style => 'margin-bottom: 15px;'}
+    .row{:style => 'margin-bottom: 5px;'}
 

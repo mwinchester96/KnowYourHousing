@@ -3,7 +3,6 @@
     .col-xs-4
       %h1
         = @property.address
-      %hr
       %p
         %strong Landlord:
         #{@property.realtor.name}
@@ -15,7 +14,7 @@
         #{@property.property_reviews.count} users
     .col-xs-4
       %h1 Ratings
-      %hr
+      
       %p
         %strong Cost:
         #{@property.property_reviews.average(:cost)}/5.0
@@ -41,7 +40,7 @@
         - @property.property_reviews.each do |i|
           %h3= i.comments
           %i= i.created_at.to_s(:long)
-      %hr
+   
       -if current_user
         -if current_user.admin?
           = link_to 'Edit', edit_property_path(@property)
