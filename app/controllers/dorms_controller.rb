@@ -5,7 +5,7 @@ class DormsController < ApplicationController
   # GET /scotches.json
 
   def index
-    @dorms = Dorm.all
+    @dorms = Dorm.order("dorm_reviews.count DESC")all
     if params[:search]
       @dorms = Dorm.search(params[:search])
     else

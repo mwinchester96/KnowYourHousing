@@ -9,7 +9,7 @@ class DormsController < ApplicationController
     if params[:search]
       @dorms = Dorm.search(params[:search])
     else
-      @dorms = Dorm.all
+      @dorms = Dorm.all.limit(20)
     end
   end
 
