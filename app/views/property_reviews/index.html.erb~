@@ -16,7 +16,6 @@
     <% @property_reviews.each do |property_review| %>
       <tr>
         <td><%= property_review.score %></td>
-        <td><%= property_review.favorite %></td>
         <td><%= property_review.comments %></td>
         <td><%= link_to 'Show', property_review %></td>
         <td><%= link_to 'Edit', edit_property_review_path(property_review) %></td>
