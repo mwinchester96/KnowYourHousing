@@ -3,7 +3,7 @@
     .col-xs-4
       %h1
         = @dorm.name
-      %hr
+      
       %p
         %strong Address:
         = @dorm.address
@@ -18,7 +18,7 @@
         #{@dorm.dorm_reviews.count} users
     .col-xs-4
       %h1 Ratings
-      %hr
+      
       %p
         %strong Cost:
         #{@dorm.dorm_reviews.average(:cost).to_f.round(1)}/5.0
