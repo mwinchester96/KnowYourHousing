@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
     user.fb_location  = hash[:info][:location]
     user.oauth_token  = hash[:credentials][:token]
     user.oauth_expires_at = Time.at(hash[:credentials][:expires_at])
+    user.role = :admin
 
     user.save! && user
   end
