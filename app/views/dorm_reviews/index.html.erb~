@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%-ensure_admin%>
 <h1>Listing Dorm Reviews</h1>
 
 <table>
