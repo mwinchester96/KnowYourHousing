@@ -34,11 +34,18 @@
                 %a{:href => new_dorm_path} + New Dorm
               %li
                 %a{:href => 'https://docs.google.com/forms/d/16shRXlieAVyXQP5vBdIT64BB-2oQyemMUVmuEc6b0AA/viewform?usp=send_form'} Contact Us
+              - if current_user.admin?
+                %li
+                  %a{:href => reviews_path} - Alter Reviews
+                %li
+                  %a{:href => property_reviews_path} - Alter Prop Reviews
+                
             - else
               %li
-                %a{:href => realtors_path} Find Realtors
+                %a{:href => realtors_path} Find Landlords
               %li
                 %a{:href => dorms_path} Find Dorms
+            
           -if current_user
             %ul.nav.navbar-nav.navbar-right
               %li
