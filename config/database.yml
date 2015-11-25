@@ -1,33 +1,14 @@
 default: &default
   adapter: postgresql
-  encoding: utf8
-  database: new_realtor
-  username: postgres
-  password: mwinchester96
-  host: localhost
-  port: 3306
-
-default: &default
-  adapter: postgresql
   encoding: unicode
-  database: new_realtor
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: postgres
-  password: mwinchester96
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: postgres
-  username: mwinchester
-  password: mwinchester96
-  host: knowyourhousingdb.ca5o7uhccc8m.us-west-2.rds.amazonaws.com:5432
-  port: 3306
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
   <<: *default
-  database: new_realtor
-
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  hostname: <%= ENV['RDS'] %>
+  port: <%= ENV['RDS_PORT'] %>
