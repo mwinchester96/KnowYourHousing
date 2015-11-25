@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Review', new_propertyreview_path %>
+<%= link_to 'New Review', new_property_review_path %>

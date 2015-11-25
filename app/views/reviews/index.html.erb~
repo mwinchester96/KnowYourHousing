@@ -1,4 +1,4 @@
-<%ensure_admin%>
+<%-ensure_admin%>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Reviews</h1>
