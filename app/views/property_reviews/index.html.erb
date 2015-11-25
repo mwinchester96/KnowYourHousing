@@ -1,6 +1,6 @@
 <%-ensure_admin%>
 <p id="notice"><%= notice %></p>
-<h1>Listing Reviews</h1>
+<h1>Listing Property Reviews</h1>
 
 <table>
   <thead>
@@ -19,7 +19,7 @@
         <td><%= review.favorite %></td>
         <td><%= review.comments %></td>
         <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
+        <td><%= link_to 'Edit', edit_proeprty_review_path(review) %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Review', new_review_path %>
+<%= link_to 'New Review', new_propertyreview_path %>
