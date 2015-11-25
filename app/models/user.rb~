@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  enum role: [ :user, :admin ]
+  enum role: [ :admin, :user ]
 
   validates :email, uniqueness: true
   validates :fb_uid, uniqueness: true
@@ -23,19 +23,9 @@ class User < ActiveRecord::Base
     user.fb_image_url = hash[:info][:image]
     user.fb_location  = hash[:info][:location]
     user.oauth_token  = hash[:credentials][:token]
-    user.role         = :user
     user.oauth_expires_at = Time.at(hash[:credentials][:expires_at])
 
     user.save! && user
   end
-
-
-  def ensure_admin
-    unless current_user && current_user.admin?
-      flash[:error] = "Sorry, you're not authorized to do that."
-      redirect_to realtors_url
-    end
-  end
-  helper_method :ensure_admin
 
 end
