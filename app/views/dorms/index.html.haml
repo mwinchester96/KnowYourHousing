@@ -8,7 +8,10 @@
     %hr
 .container
   -if(@dorms.count == 0)
-    %h4=link_to 'None exist yet, create one here!', new_dorm_path  
+    -if current_user
+      %h4=link_to 'None exist yet, create one here!', new_dorm_path  
+    -else
+      %h4 None exist yet
     %hr
   - @dorms.each do |dorm|
     .row

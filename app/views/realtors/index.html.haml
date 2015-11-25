@@ -8,7 +8,10 @@
     %hr
 .container
   -if(@realtors.count == 0)
-    %h4=link_to 'None exist yet, create one here!', new_realtor_path
+    -if current_user
+      %h4=link_to 'None exist yet, create one here!', new_realtor_path
+    -else
+      %h4 None exist yet
     %hr
   - @realtors.each do |realtor|
     .row

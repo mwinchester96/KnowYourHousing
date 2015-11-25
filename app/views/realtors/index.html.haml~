@@ -9,6 +9,7 @@
 .container
   -if(@realtors.count == 0)
     %h4=link_to 'None exist yet, create one here!', new_realtor_path
+    %hr
   - @realtors.each do |realtor|
     .row
       .col-md-10
