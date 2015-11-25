@@ -9,7 +9,7 @@ class RealtorsController < ApplicationController
     if params[:search]
       @realtors = Realtor.search(params[:search])
     else
-      @realtors = Realtor.all.limit(50)
+      @realtors = Realtor.all.limit(20)
     end
   end
 

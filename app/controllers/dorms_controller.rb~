@@ -7,7 +7,7 @@ class DormsController < ApplicationController
   def index
     @dorms = Dorm.all
     if params[:search]
-      @dorm = Dorm.search(params[:search])
+      @dorms = Dorm.search(params[:search])
     else
       @dorms = Dorm.all
     end

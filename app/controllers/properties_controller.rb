@@ -9,7 +9,7 @@ class PropertiesController < ApplicationController
     if params[:search]
       @properties = Property.search(params[:search])
     else
-      @properties = Property.all
+      @properties = Property.all.limit(20)
     end
   end
 
