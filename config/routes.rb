@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :users
   resources :sessions
+  match '/contact',  to: 'pages#contact', via: [:get]
 
   get '/auth/:provider/callback', to: 'sessions#facebook_create', as: 'facebook_create'
   get '/auth/failure', to: redirect('/')
