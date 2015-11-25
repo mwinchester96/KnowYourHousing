@@ -41,7 +41,7 @@
                     %li
                       %a{:href => reviews_path} Alter Reviews
                     %li
-                      %a{:href => property_reviews_path} - Alter Prop Reviews
+                      %a{:href => property_reviews_path} Alter Prop Reviews
             - else
               %li
                 %a{:href => realtors_path} Find Landlords
