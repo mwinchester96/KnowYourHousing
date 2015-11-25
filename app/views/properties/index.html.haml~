@@ -5,7 +5,7 @@
   %hr
 .container
   -if(@properties.where(realtor_id: (params[:realtor_id])).count == 0)
-    %h4=link_to 'None exist yet, create one here!',new_property_path(:realtor_id => params[:realtor_id],:realtor_name=>params[:realtor_name]))
+    %h4=link_to 'None exist yet, create one here!',new_property_path(:realtor_id => params[:realtor_id],:realtor_name=>params[:realtor_name])
     %hr
   - @properties.where(realtor_id: (params[:realtor_id])).each do |property|
     .row
